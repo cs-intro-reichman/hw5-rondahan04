@@ -77,7 +77,8 @@ public class MyString {
      */
     public static String spacedString(String str) {
      String newStr = "";
-     if (str.length() == 1 || str.length() == 0) return " " + str;
+     if (str.length() == 1 ) return " " + str;
+     if (str.length() == 0 ) return " ";
      for (int i=0 ; i<str.length();i++){
         newStr=newStr + " ";
         newStr=newStr + str.charAt(i);
