@@ -80,12 +80,11 @@ public class MyString {
      if (str.length() == 1 ) return " " + str;
      if (str.length() == 0 ) return " ";
      for (int i=0 ; i<str.length();i++){
-        newStr=newStr + " ";
         newStr=newStr + str.charAt(i);
+        newStr=newStr + " ";
      }
      return newStr;
     }
-  
     /**
      * Returns a string of n lowercase letters, selected randomly from 
      * the English alphabet 'a', 'b', 'c', ..., 'z'. Note that the same
