@@ -11,7 +11,9 @@ public class MyString {
         System.out.println(countChar(hello, 'z')); // 0
         System.out.println(spacedString(hello));
         System.out.println(subsetOf("c", "space"));
-        System.out.println(remove("committee","meet"));
+        System.out.println(subsetOf("sap","space"));
+        System.out.println(subsetOf("spa","space"));
+        System.out.println(subsetOf("runi","running"));
                 //// Put your other tests here.
     }
 
@@ -45,26 +47,19 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str2, String str1) { // finished subsetOf
-        if (str2.length() == 0){
-            return true;
-        }
         if (str2.length() > str1.length()){
             return false;
         }
         for (int i = 0; i < str1.length(); i++) {
+            if (str2.length() == 0 ) return true;
             if (str1.charAt(i) == str2.charAt(0)) { // if the first letter of str2 is in str1
                 int j = 0;
-                str1=remove(str1, "" + str1.charAt(j));
+                str1=remove(str1, "" + str1.charAt(i));
                 str2=remove(str2, "" + str2.charAt(j));
-                while (j < str2.length()  && str1.charAt(i+j) == str2.charAt(j)) { // checks if the rest of the letters are the same
-                    j++;
-                }
-                if (j == str2.length() || str2.length()==1 ) { // if all the letters are the same
-                    return true;
-                }
-            }
+                i=-1;
+            } 
         }
-        return false;
+        return (str2.length()==0);
     }
 
     /** Returns a string which is the same as the given string, with a space
@@ -77,8 +72,7 @@ public class MyString {
      */
     public static String spacedString(String str) {
      String newStr = "";
-     if (str.length() == 1 ) return str;
-     if (str.length() == 0 ) return newStr;
+     if (str.length() == 1  || str.length() == 0) return str;
      for (int i=0 ; i<str.length()-1;i++){
         newStr=newStr + str.charAt(i);
         newStr=newStr + " ";
