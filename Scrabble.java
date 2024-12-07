@@ -108,7 +108,7 @@ public class Scrabble {
 				break;
 			}
 			else if (!isWordInDictionary(input)) { // if word doesnt exists.
-				//System.out.println("No such word in the dictionary. Try again");
+				System.out.println("Invalid word. Try again.");
 			}
 			else {
 			int  thisScore = wordScore(input);
